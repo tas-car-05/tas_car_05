@@ -31,14 +31,14 @@ void control::positionCallback(const geometry_msgs::PoseStamped::ConstPtr& msg)
     est_position_x = msg->pose.position.x;
     est_position_y = msg->pose.position.y;
 
-    ROS_INFO("est_position_x: [%f]", est_position_x);
+    //ROS_INFO("est_position_x: [%f]", est_position_x);
             //Kurve links oben
             if(9.5 < est_position_x && est_position_x < 14 && -1.5 < est_position_y && 1.5 < est_position_y)
             {
 
-                {  ROS_INFO("Kurve links oben");
-                   ROS_INFO("est_position_x: [%f]", est_position_x);
-                   ROS_INFO("est_position_y: [%f]", est_position_y);
+                {  //ROS_INFO("Kurve links oben");
+                   //ROS_INFO("est_position_x: [%f]", est_position_x);
+                   //ROS_INFO("est_position_y: [%f]", est_position_y);
 
                    Kurve = 1;
                 }
@@ -47,18 +47,18 @@ void control::positionCallback(const geometry_msgs::PoseStamped::ConstPtr& msg)
             //Kurve rechts oben
             else if(10.5 < est_position_x && est_position_x < 14 && -14 < est_position_y && est_position_y< -11)
             {
-                ROS_INFO("Kurve rechts oben");
-                ROS_INFO("est_position_x: [%f]", est_position_x);
-                ROS_INFO("est_position_y: [%f]", est_position_y);
+                //ROS_INFO("Kurve rechts oben");
+                //ROS_INFO("est_position_x: [%f]", est_position_x);
+                //ROS_INFO("est_position_y: [%f]", est_position_y);
                 Kurve = 1;
             }
 
             //Kurve rechts unten
             else if(-2 < est_position_x && est_position_x< 1.5 && -14 < est_position_y && est_position_y < -10.5)
             {
-                ROS_INFO("Kurve rechts unten");
-                ROS_INFO("est_position_x: [%f]", est_position_x);
-                ROS_INFO("est_position_y: [%f]", est_position_y);
+                //ROS_INFO("Kurve rechts unten");
+                //ROS_INFO("est_position_x: [%f]", est_position_x);
+                //ROS_INFO("est_position_y: [%f]", est_position_y);
                 Kurve = 1;
             }
 /*
@@ -71,9 +71,9 @@ void control::positionCallback(const geometry_msgs::PoseStamped::ConstPtr& msg)
             //Gerade
             else
             {
-                 ROS_INFO("est_position_x_Gerade: [%f]");
-                 ROS_INFO("est_position_x: [%f]", est_position_x);
-                 ROS_INFO("est_position_y: [%f]", est_position_y);
+                 //ROS_INFO("est_position_x_Gerade: [%f]");
+                 //ROS_INFO("est_position_x: [%f]", est_position_x);
+                 //ROS_INFO("est_position_y: [%f]", est_position_y);
                  Kurve = 0;
             }
 

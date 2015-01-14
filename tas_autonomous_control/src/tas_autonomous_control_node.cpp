@@ -9,9 +9,9 @@ int main(int argc, char** argv)
 
     while(ros::ok())
     {
-        if(false) //autonomous_control.control_Mode.data==0)
+        if(autonomous_control.control_Mode.data==0)
         {
-            //ROS_INFO("Manually Control!");
+            ROS_INFO("Manually Control!");
         }
         else
         {
@@ -28,7 +28,7 @@ int main(int argc, char** argv)
                 {
                     if (autonomous_control.Kurve == 1)
                     {
-                        ROS_INFO("est_position_x_1550:");
+                        //ROS_INFO("est_position_x_1550:");
 
 
                         //sanftes Anfahren
@@ -43,19 +43,19 @@ int main(int argc, char** argv)
                     }
                     else
                     {
-                        ROS_INFO("est_position_x_1650:");
-                        autonomous_control.control_servo.x = 1555;
+                        //ROS_INFO("est_position_x_1650:");
+                        autonomous_control.control_servo.x = 1550; // 1555
                        //autonomous_control.control_servo.x = 1500 + 36*autonomous_control.cmd_linearVelocity;
                     }
                                     }
                 else if(autonomous_control.cmd_linearVelocity<0)
                 {
-                    ROS_INFO("est_position_x_1400:");
+                    //ROS_INFO("est_position_x_1400:");
                     autonomous_control.control_servo.x = 1420;
                 }
                 else
                 {
-                    ROS_INFO("est_position_x_1500: ");
+                    //ROS_INFO("est_position_x_1500: ");
                     // sanfte Anfahrt
                    /*
                     if(autonomous_control.Counter == 0 )

@@ -406,67 +406,67 @@ int main(int argc, char** argv){
     // /////////////////////////////////////////////RundKurs////////////////////////////
 
     geometry_msgs::Pose waypoint1;              //first goal straight on the hallway
-    waypoint1.position.x = 10.54;
-    waypoint1.position.y = 10.38;
+    waypoint1.position.x = 10.23;
+    waypoint1.position.y = 10.22;
     waypoint1.orientation.x = 0.000;
     waypoint1.orientation.y = 0.000;
-    waypoint1.orientation.z = -0.72;
-    waypoint1.orientation.w = 0.68;
+    waypoint1.orientation.z = -0.7;
+    waypoint1.orientation.w = 0.71;
     waypoints.push_back(waypoint1);
 
     geometry_msgs::Pose waypoint2;              //after the first corner
-    waypoint2.position.x = 12.92;
-    waypoint2.position.y = 6.55;
+    waypoint2.position.x = 11.29;
+    waypoint2.position.y = 6.42;
     waypoint2.orientation.x = 0.000;
     waypoint2.orientation.y = 0.000;
-    waypoint2.orientation.z = -0.72;
-    waypoint2.orientation.w = 0.68;
+    waypoint2.orientation.z = 0.0;
+    waypoint2.orientation.w = 0.99;
     waypoints.push_back(waypoint2);
 
     geometry_msgs::Pose waypoint3;              //corner bevore small door
-    waypoint3.position.x = 20.70;
-    waypoint3.position.y = 5.95;
-    waypoint3.position.z = 0.18;
+    waypoint3.position.x = 21.69;
+    waypoint3.position.y = 5.76;
+    waypoint3.position.z = 0;
     waypoint3.orientation.x = 0.000;
     waypoint3.orientation.y = 0.000;
-    waypoint3.orientation.z = 0.03;
-    waypoint3.orientation.w = 0.99;
+    waypoint3.orientation.z = 0.16;
+    waypoint3.orientation.w = 0.98;
     waypoints.push_back(waypoint3);
 
     geometry_msgs::Pose waypoint4;              //close to the small door
-    waypoint4.position.x = 23.34;
-    waypoint4.position.y = 6.75;
-    waypoint4.position.z = 0.18;
+    waypoint4.position.x = 23.19;
+    waypoint4.position.y = 6.28;
+    waypoint4.position.z = 0.0;
     waypoint4.orientation.x = 0.000;
     waypoint4.orientation.y = 0.000;
-    waypoint4.orientation.z = 0.64;
-    waypoint4.orientation.w = 0.76;
+    waypoint4.orientation.z = 0.55;
+    waypoint4.orientation.w = 0.83;
     waypoints.push_back(waypoint4);
 
-    geometry_msgs::Pose waypoint5;              //after the small door
-    waypoint5.position.x = 23.55;
-    waypoint5.position.y = 8.30;
-    waypoint5.position.z = 0.18;
+    geometry_msgs::Pose waypoint5;              //in the small door
+    waypoint5.position.x = 23.40;
+    waypoint5.position.y = 7.0;
+    waypoint5.position.z = 0.0;
     waypoint5.orientation.x = 0.000;
     waypoint5.orientation.y = 0.000;
-    waypoint5.orientation.z = 0.70;
-    waypoint5.orientation.w = 0.70;
+    waypoint5.orientation.z = 0.68;
+    waypoint5.orientation.w = 0.73;
     waypoints.push_back(waypoint5);
 
     geometry_msgs::Pose waypoint6;              //before the third corner
-    waypoint6.position.x = 23.71;
-    waypoint6.position.y = 16.96;
-    waypoint6.position.z = 0.18;
+    waypoint6.position.x = 23.89;
+    waypoint6.position.y = 17.23;
+    waypoint6.position.z = 0.0;
     waypoint6.orientation.x = 0.000;
     waypoint6.orientation.y = 0.000;
-    waypoint6.orientation.z = 0.70;
-    waypoint6.orientation.w = 0.70;
+    waypoint6.orientation.z = 0.79;
+    waypoint6.orientation.w = 0.61;
     waypoints.push_back(waypoint6);
 
     geometry_msgs::Pose waypoint7;              //after the third corner
-    waypoint7.position.x = 22.26;
+    waypoint7.position.x = 22.03;
     waypoint7.position.y = 19.2;
-    waypoint7.position.z = 0.18;
+    waypoint7.position.z = 0.0;
     waypoint7.orientation.x = 0.000;
     waypoint7.orientation.y = 0.000;
     waypoint7.orientation.z = 0.99;
@@ -474,14 +474,24 @@ int main(int argc, char** argv){
     waypoints.push_back(waypoint7);
 
     geometry_msgs::Pose waypoint8;              //before fourth corner
-    waypoint8.position.x = 13.83;
-    waypoint8.position.y = 19.55;
-    waypoint8.position.z = 0.18;
+    waypoint8.position.x = 13.47;
+    waypoint8.position.y = 19.87;
+    waypoint8.position.z = 0.0;
     waypoint8.orientation.x = 0.000;
     waypoint8.orientation.y = 0.000;
     waypoint8.orientation.z = 0.99;
-    waypoint8.orientation.w = 0.00;
+    waypoint8.orientation.w = -0.07;
     waypoints.push_back(waypoint8);
+
+    geometry_msgs::Pose waypoint9;              //end position after the fourth corner
+    waypoint8.position.x = 10.9;
+    waypoint8.position.y = 18.46;
+    waypoint8.position.z = 0.0;
+    waypoint8.orientation.x = 0.000;
+    waypoint8.orientation.y = 0.000;
+    waypoint8.orientation.z = -0.72;
+    waypoint8.orientation.w = 0.68;
+    waypoints.push_back(waypoint9);
 
     MoveBaseClient ac("move_base", true);
 

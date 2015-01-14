@@ -2,8 +2,8 @@ global_costmap:
   global_frame: /map
   robot_base_frame: base_link
   map_type: costmap
-  update_frequency: 10.0 #10
-  publish_frequency: 10.0 #10
+  update_frequency: 20.0 #10
+  publish_frequency: 20.0 #10
   width: 50
   height: 50
   static_map: true

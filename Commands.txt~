@@ -8,9 +8,3 @@ rosrun tf view_frames
 
 gen.add("angle_min", double_t, 0, "Minimum angle of the output scan", -2.36, -3.14, 3.14)
 gen.add("angle_max", double_t, 0, "Maximum angle of the output scan", 2.36, -3.14, 3.14)
-
-
-Shellscripts
-~/catkin_ws/src/tas_car_05/start_task_1
-
-
