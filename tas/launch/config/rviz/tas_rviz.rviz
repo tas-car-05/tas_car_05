@@ -10,6 +10,8 @@ Panels:
         - /Map1
         - /TF1
         - /TF1/Frames1
+        - /TF1/Frames1/base_link1
+        - /TF1/Frames1/base_link1/Position1
         - /Path1
         - /Path2
         - /Path3
@@ -173,6 +175,14 @@ Visualization Manager:
       Name: Imu
       Topic: /imu/data
       Value: true
+    - Alpha: 0.7
+      Class: rviz/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: true
+      Name: Map
+      Topic: /move_base_node/local_costmap/costmap
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -197,23 +207,40 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 48.1258
+      Distance: 12.1134
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 17.387
-        Y: 10.7762
-        Z: -8.17145
+        X: 23.3814
+        Y: 18.7642
+        Z: 0.00670242
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 1.5698
+      Pitch: 1.15785
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.62677
-    Saved: ~
+      Yaw: 4.63452
+    Saved:
+      - Class: rviz/Orbit
+        Distance: 12.1134
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.06
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Focal Point:
+          X: 23.3814
+          Y: 18.7642
+          Z: 0.00670242
+        Name: Orbit
+        Near Clip Distance: 0.01
+        Pitch: 1.15785
+        Target Frame: <Fixed Frame>
+        Value: Orbit (rviz)
+        Yaw: 4.63452
 Window Geometry:
   Displays:
     collapsed: false

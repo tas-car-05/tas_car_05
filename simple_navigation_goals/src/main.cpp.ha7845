@@ -424,14 +424,14 @@ int main(int argc, char** argv){
     waypoint2.orientation.z = 0.0;
     waypoint2.orientation.w = 0.99;
     waypoints.push_back(waypoint2);
-*/
+    ---------------------- */
     geometry_msgs::Pose waypoint3;              //corner before small door
-    waypoint3.position.x = 21.7;
+    waypoint3.position.x = 21.99;
     waypoint3.position.y = 5.6;
     waypoint3.position.z = 0;
     waypoint3.orientation.x = 0.000;
     waypoint3.orientation.y = 0.000;
-    waypoint3.orientation.z = 0.23;
+    waypoint3.orientation.z = 0.27;
     waypoint3.orientation.w = 0.96;
     waypoints.push_back(waypoint3);
 
@@ -446,7 +446,6 @@ int main(int argc, char** argv){
     waypoints.push_back(waypoint4);*/
 
 
-    //////////////
     geometry_msgs::Pose waypoint5;              //in the small door
     waypoint5.position.x = 23.15;
     waypoint5.position.y = 7.3;

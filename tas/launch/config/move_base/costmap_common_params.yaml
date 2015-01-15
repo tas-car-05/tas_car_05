@@ -1,5 +1,5 @@
-obstacle_range: 1.05 #1.55
-raytrace_range: 2.5 #2.0
+obstacle_range: 3 #1.05 <- value from group05 / original 1.55
+raytrace_range: 2.0 #2.5 <- value from group05
 footprint: [[0.33, 0.22], [0.33, -0.22], [-0.33, -0.22], [-0.33, 0.22]]
 inflation_radius: 1.5 #0.5
 observation_sources: laser_scan_sensor

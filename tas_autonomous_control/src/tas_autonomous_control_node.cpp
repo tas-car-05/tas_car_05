@@ -9,7 +9,7 @@ int main(int argc, char** argv)
 
     while(ros::ok())
     {
-        if(autonomous_control.control_Mode.data==0)
+        if(false)//autonomous_control.control_Mode.data==0)
         {
             ROS_INFO("Manually Control!");
         }
@@ -22,7 +22,7 @@ int main(int argc, char** argv)
             }
             else
             {
-                ROS_INFO("Automatic Control!");
+                //ROS_INFO("Automatic Control!");
 
                 if(autonomous_control.cmd_linearVelocity>0)
                 {
