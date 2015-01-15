@@ -44,7 +44,7 @@ int main(int argc, char** argv){
 	// /////////////////////////////////////// Start of waypoint setting ///////////////////////////////////
     // /////////////////////////////////////////// TASK 1 - RUNDKURS /////////////////////////////////////
 	// Set waypoints for the fist task.
-
+/*
     geometry_msgs::Pose waypoint1;              //first goal straight on the hallway
     waypoint1.position.x = 10.23;
     waypoint1.position.y = 10.22;
@@ -135,7 +135,7 @@ int main(int argc, char** argv){
     waypoint10.orientation.z = -0.7;
     waypoint10.orientation.w = 0.7;
     waypoints.push_back(waypoint10);
-	
+	*/
 	
 	// ///////////////////////////////////////TASK 2 - SLALOM/////////////////////////////////////
 	// Setting 14 waypoints for the second task.

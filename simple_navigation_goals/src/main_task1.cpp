@@ -139,7 +139,7 @@ int main(int argc, char** argv){
 	
 	// ///////////////////////////////////////TASK 2 - SLALOM/////////////////////////////////////
 	// Setting 14 waypoints for the second task.
-	
+	/*
     geometry_msgs::Pose waypoint1;
     waypoint1.position.x = 23.90;
     waypoint1.position.y = 17.8;
@@ -279,7 +279,7 @@ int main(int argc, char** argv){
     waypoint14.orientation.z = -0.74;
     waypoint14.orientation.w = 0.67;
     waypoints.push_back(waypoint14);
-	
+	*/
 	
 	// ///////////////////////////////////////End of waypoint setting/////////////////////////////////////
 	

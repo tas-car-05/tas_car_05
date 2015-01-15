@@ -1,3 +1,6 @@
+<!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+<!-- :::::::: Move_base launch file to start task 2 :::::::::-—>
+
 <?xml version="1.0"?>
 
 <launch>
@@ -13,8 +16,8 @@
   <!-- Set up fake odomotry -->
   <include file="$(find tas)/launch/odom.launch" />
 
-  <!-- Set up move base package-->
-  <include file="$(find tas)/launch/move_base.launch" />
+  <!-- Set up move base package for Task_2 —>
+  <include file="$(find tas)/launch/move_base_task_2.launch" />
 
   <!-- Run rviz -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find tas)/launch/config/rviz/tas_rviz.rviz" />
