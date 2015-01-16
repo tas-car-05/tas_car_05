@@ -7,11 +7,14 @@
   <!-- Set up hardware -->
   <include file="$(find tas)/launch/hardware.launch" />
 
+ <!-- Set up IRA_Laser_Merger -->
+  <include file="$(find ira_laser_tools)/launch/laserscan_multi_merger.launch" />
+
   <!-- Set up fake odomotry -->
   <include file="$(find tas)/launch/odom.launch" />
 
   <!-- Set up move base package-->
-  <include file="$(find tas)/launch/move_base.launch" />
+  <include file="$(find tas)/launch/move_base_task_1.launch" />
 
   <!-- Run rviz -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find tas)/launch/config/rviz/tas_rviz.rviz" />
