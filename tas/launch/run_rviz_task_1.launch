@@ -16,7 +16,7 @@
   <!-- Set up fake odomotry -->
   <include file="$(find tas)/launch/odom.launch" />
 
-  <!-- Set up move base package for Task_1 —>
+  <!-- Set up move base package for Task_1 -->
   <include file="$(find tas)/launch/move_base_task_1.launch" />
 
   <!-- Run rviz -->
