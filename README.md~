@@ -75,6 +75,6 @@ run_rviz_task_2.launch:	Zum Starten vom Slalom
 WICHTIG: die main.cpp (in /simple_navigation_goals/src) 
 muss entsprechend der task angepasst werden, sodass 
 die Waypoints stimmen!!
--------------------------------------------------------------------------------------------------------------------------------	
+
 
 
