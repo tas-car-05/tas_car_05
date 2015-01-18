@@ -19,8 +19,7 @@ The package tas_autonomous_control controls the velocity of the car dependent on
 
 New implementation compared to the origin node.
 	
-forward: <----- ?????????
--------------------------------------------------------------------------------------------------------------------------------	
+New implentation compared to the origin node:
 Detection whether the car is located on a straight track or in the curve.
 If the car is located on the straight track, the velocity is higher than in a curve.
 For curve detection the algorithm subscribes to the topic slam_out_pose, which contains the robots pose without covariance.
@@ -95,12 +94,12 @@ Shell-script that executes simple_navigation_goals_node:
 ~/catkin_ws/src/tas_car_05/start_task
 ```
 
-Opens graphical table of relationships between nodes and topics:
+Opens graphical table of relationships between nodes/topics:
 ```
 rosrun rqt_graph rqt_graph
 ```
 
-Creates a pdf-file with the relationships of the existing frames and ther transformations:
+Creates a pdf-file with the relationships of the existing frames and their transformations:
 ```
 rosrun tf view_frames
 ```
