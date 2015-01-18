@@ -15,13 +15,21 @@ during the laboratory acording to the lecture "Technik autonomer Systeme" at Tec
 
 Package: tas_autonomous_control
 -------------------------------------------------------------------------------------------------------------------------------	
-Control the velocity of the car dependent on the delivered velocity from the local planer. New implementation compared to the origin node.
+The package tas_autonomous_control controls the velocity of the car dependent on the delivered velocity from the local planer. 
+
+New implementation compared to the origin node.
 	
 forward: <----- ?????????
 -------------------------------------------------------------------------------------------------------------------------------	
 Detection whether the car is located on a straight track or in the curve.
 If the car is located on the straight track, the velocity is higher than in a curve.
+For curve detection the algorithm subscribes to the topic slam_out_pose, which contains the robots pose without covariance.
 The acceleration is limited to provide a soft start.
+
+Package: simple_navigation goals
+-------------------------------------------------------------------------------------------------------------------------------
+The simple_navigation_package sends fixed goals, which are stored in a queue.
+The goals were recorded for the first and second task.
 
 Package: ira_laser_tools (developed at Universita di Milano)
 -------------------------------------------------------------------------------------------------------------------------------	
@@ -55,26 +63,22 @@ in odom.launch
 Launch files and necessary changes to start trak 1 and 2
 -------------------------------------------------------------------------------------------------------------------------------	
 move_base_task_1:
-- ist identisch mit move_base
-- anpassung: initial pose = Startposition 1
+- identical to move_base
+- changes: initial pose = start position 1
 
 move_base_task_2:
-- ist identisch mit move_base
-- anpassung: initial pose = Startposition 2
+- identical to move_base
+- changes: initial pose = start position 2
 
-run_rviz_task_1.launch:	Zum Starten vom Rundkurs
-- ist identisch mit run_rviz.launch
-- anstatt move_base, wird move_base_task_1 gestartet
-  und damit die Initial Pose für den Rundkurs gesetzt
+run_rviz_task_1.launch:	for launching task 1 - circuit
+- identical to run_rviz.launch
+- launching move_base_task_2 instead of move_base
 
-run_rviz_task_2.launch:	Zum Starten vom Slalom
-- ist identisch mit run_rviz.launch
-- anstatt move_base, wird move_base_task_2 gestartet
-  und damit die Initial Pose für das Slalom gesetzt
+run_rviz_task_2.launch:	for launching task 2 - slalom 
+- identical to run_rviz.launch
+- launching move_base_task_2 instead of move_base
 
-WICHTIG: die main.cpp (in /simple_navigation_goals/src) 
-muss entsprechend der task angepasst werden, sodass 
-die Waypoints stimmen!!
+IMPORTANT: In the main.cpp (in /simple_navigation_goals/src) you have to commend the waypoint-setting of the other task out!
 
 
 

@@ -10,18 +10,26 @@ Marcin Kasperek		marcin.kasperek@tum.de
 Christopher Weber	chritopher.weber@tum.de
 ```
 
-during the laboratory acording to the lecture Technok autonomer Systeme at Technische Universität München. 
+during the laboratory acording to the lecture "Technik autonomer Systeme" at Technische Universität München. 
 
 
 Package: tas_autonomous_control
 -------------------------------------------------------------------------------------------------------------------------------	
-Control the velocity of the car dependent on the delivered velocity from the local planer. New implementation compared to the origin node.
+The package tas_autonomous_control controls the velocity of the car dependent on the delivered velocity from the local planer. 
+
+New implementation compared to the origin node.
 	
 forward: <----- ?????????
 -------------------------------------------------------------------------------------------------------------------------------	
 Detection whether the car is located on a straight track or in the curve.
 If the car is located on the straight track, the velocity is higher than in a curve.
+For curve detection the algorithm subscribes to the topic slam_out_pose, which contains the robots pose without covariance.
 The acceleration is limited to provide a soft start.
+
+Package: simple_navigation goals
+-------------------------------------------------------------------------------------------------------------------------------
+The simple_navigation_package sends fixed goals, which are stored in a queue.
+The goals were recorded for the first and second task.
 
 Package: ira_laser_tools (developed at Universita di Milano)
 -------------------------------------------------------------------------------------------------------------------------------	
