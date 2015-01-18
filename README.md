@@ -95,12 +95,12 @@ Shell-script that executes simple_navigation_goals_node:
 ~/catkin_ws/src/tas_car_05/start_task
 ```
 
-Opens graphical table of relationships between nodes and topics:
+Opens graphical table of relationships between nodes/topics:
 ```
 rosrun rqt_graph rqt_graph
 ```
 
-Creates a pdf-file with the relationships of the existing frames and ther transformations:
+Creates a pdf-file with the relationships of the existing frames and their transformations:
 ```
 rosrun tf view_frames
 ```

@@ -82,7 +82,27 @@ run_rviz_task_2.launch:	for launching task 2 - slalom
 
 IMPORTANT: In the main.cpp (in /simple_navigation_goals/src) you have to commend the waypoint-setting of the other task out!
 
+Usefull commands
+-------------------------------------------------------------------------------------------------------------------------------	
 
+Executes several launch-files for hardware, odom, move_base and rviz:
+```
+roslaunch ~/catkin_ws/src/tas_car_05/tas/launch/run_rviz.launch
+```
 
+Shell-script that executes simple_navigation_goals_node:
+```
+~/catkin_ws/src/tas_car_05/start_task
+```
+
+Opens graphical table of relationships between nodes and topics:
+```
+rosrun rqt_graph rqt_graph
+```
+
+Creates a pdf-file with the relationships of the existing frames and ther transformations:
+```
+rosrun tf view_frames
+```
 
 
