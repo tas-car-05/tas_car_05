@@ -1,9 +1,0 @@
-digraph G {
-"laser" -> "laser_front"[label="Broadcaster: /virtual_laser_to_laser_front\nAverage rate: 25.136 Hz\nMost recent transform: 1420803434.767 \nBuffer length: 4.893 sec\n"];
-"base_link" -> "laser"[label="Broadcaster: /base_link_to_laser\nAverage rate: 25.131 Hz\nMost recent transform: 1420803434.774 \nBuffer length: 4.894 sec\n"];
-"scanmatcher_frame" -> "base_link"[label="Broadcaster: /scanmatch_to_base\nAverage rate: 25.130 Hz\nMost recent transform: 1420803434.773 \nBuffer length: 4.894 sec\n"];
-"odom" -> "scanmatcher_frame"[label="Broadcaster: /hector_mapping\nAverage rate: 10.206 Hz\nMost recent transform: 1420803434.734 \nBuffer length: 4.801 sec\n"];
-"map" -> "odom"[label="Broadcaster: /amcl\nAverage rate: 10.202 Hz\nMost recent transform: 1420803434.834 \nBuffer length: 4.901 sec\n"];
-"base_link" -> "base_imu"[label="Broadcaster: /base_link_to_imu\nAverage rate: 25.135 Hz\nMost recent transform: 1420803434.781 \nBuffer length: 4.894 sec\n"];
-"laser" -> "laser_back"[label="Broadcaster: /virtual_laser_to_laser_back\nAverage rate: 25.134 Hz\nMost recent transform: 1420803434.764 \nBuffer length: 4.854 sec\n"];
-}
