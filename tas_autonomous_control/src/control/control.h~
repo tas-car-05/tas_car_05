@@ -13,7 +13,7 @@
 #include <geometry_msgs/Quaternion.h>
 #include "fstream"
 
-#define PI                     3.14159265
+#define PI                    	3.14159265
 #define CAR_LENGTH              0.355
 #define SCALE_FAKTOR_STEERING   500
 
@@ -27,6 +27,8 @@ public:
     ros::Subscriber cmd_sub_;
     ros::Subscriber odom_sub_;
     ros::Subscriber wii_communication_sub;
+	// NodeHandle::subscribe() returns a ros::Subscriber object, 
+	// that you must hold on to until you want to unsubscribe
     ros::Subscriber position_sub;
 
     std_msgs::Int16 control_Brake; /* flag for brake */
@@ -40,12 +42,14 @@ public:
     double odom_angularVelocity;
     double odom_steeringAngle;
 
+	// curve detection 
     int Kurve;
-    int Counter;
-    // int flag;
+	// counter for acceleration limit
+    // int Counter;
 
     geometry_msgs::Vector3 control_servo;
 
+	// robots pose
     double est_position_x;
     double est_position_y;
 
@@ -59,7 +63,7 @@ private:
     /* check the wii states and switch the flag for manual mode and autonomous mode */
     void wiiCommunicationCallback(const std_msgs::Int16MultiArray::ConstPtr& msg);
 
-    // subscribe the position of the amcl_particlecloud
+    // subscribe the position of the slam_out_pose
     void positionCallback(const geometry_msgs::PoseStamped::ConstPtr& msg);
 
 };
