@@ -60,7 +60,7 @@ in odom.launch
 |base_link_to_laser		| /base_link	| /laser|
 
 
-Launch files and necessary changes to start trak 1 and 2
+Launch files and necessary changes to start task 1 and 2
 -------------------------------------------------------------------------------------------------------------------------------	
 move_base_task_1:
 - identical to move_base
