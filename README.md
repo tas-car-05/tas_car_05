@@ -17,9 +17,8 @@ during the laboratory according to the lecture "Technik autonomer Systeme" at Te
 #### Package: tas_autonomous_control
 The package tas_autonomous_control controls the velocity of the car dependent on the delivered velocity from the local planer. 
 
-**New implementation compared to the origin node.**
+**New implementation compared to the origin node**
 
-New implentation compared to the origin node:
 Detection whether the car is located on a straight track or in the curve.
 If the car is located on the straight track, the velocity is higher than in a curve.
 For curve detection the algorithm subscribes to the topic slam_out_pose, which contains the robots pose without covariance.

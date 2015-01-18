@@ -14,7 +14,7 @@ during the laboratory according to the lecture "Technik autonomer Systeme" at Te
 
 ***
 
-### Package: tas_autonomous_control
+#### Package: tas_autonomous_control
 The package tas_autonomous_control controls the velocity of the car dependent on the delivered velocity from the local planer. 
 
 **New implementation compared to the origin node.**
@@ -27,7 +27,7 @@ The acceleration is limited to provide a soft start.
 
 ***
 
-###Package: simple_navigation_goals
+#### Package: simple_navigation_goals
 The simple_navigation_package sends fixed goals, which are stored in a queue.
 The goals were recorded for the first and second task.
 
@@ -35,17 +35,17 @@ The "start_task.sh" file in the root directory is a shell script which starts th
 
 ***
 
-###Package: ira_laser_tools (developed at Universita di Milano)
+#### Package: ira_laser_tools (developed at Universita di Milano)
 The ira_laser_tool package is used to merge the laserscan data from the front and back laser into one scan topic. Due the fact that hector_mapping, move_base and AMCL subscribe only to one scan topic, the merging of the laser data is required. For any further information, please look into the ira_laser_tool documentation. (https://github.com/iralabdisco/ira_laser_tools)
 
 ***
 
-###Parameter: base_local_planner_params
+#### Parameter: base_local_planner_params
 changed min_val_x from 0.1 to 0.01
 
 ***
 
-###Directory: TAS
+#### Directory: TAS
 Adjusted launch files.
 
 in **hardware.launch**
@@ -67,7 +67,7 @@ in **odom.launch**
 ***
 
 
-###Launch files and necessary changes to start task 1 and 2
+#### Launch files and necessary changes to start task 1 and 2
 	
 ######move_base_task_1:
 - identical to move_base
