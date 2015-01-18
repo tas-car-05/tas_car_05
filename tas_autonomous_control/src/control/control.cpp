@@ -11,87 +11,85 @@ control::control()
 
     wii_communication_sub = nh_.subscribe<std_msgs::Int16MultiArray>("wii_communication",1000,&control::wiiCommunicationCallback,this);
 
+	// Subscribe to the slam_out_pose topic with the master. ROS will call the positionCallback() function whenever a new message arrives. 
+	// The 2nd argument is the queue size, in case we are not able to process messages fast enough
     position_sub = nh_.subscribe<geometry_msgs::PoseStamped>("slam_out_pose", 1000, &control::positionCallback, this);
-
-//    Fp = 10;// need to test! defult:125
-
-//    current_ServoMsg.x = 1500;
-//    current_ServoMsg.y = 1500;
-
-//    previous_ServoMsg.x = 1500;
-//    previous_ServoMsg.y = 1500;
-
 }
+
 // We can subscribe to the odom here and get some feedback signals so later we can build our controllers
 
-
-
+/**************************************************************************************************************
+*	function positionCallback
+*
+*		programmer:
+*			- Christoph Allig		christoph.allig@tum.de
+*			- Marcin Kasperek		marcin.kasperek@tum.de
+*	
+*		functionality:
+*			- subscribes to the topic slam_out_pose (robots pose without covariance)
+*			- definition of areas for each curve
+*			  => detect whether the car is driving in a curve or on a straight track 
+*		
+*		last modified: 16.01.2015
+**************************************************************************************************************/
 void control::positionCallback(const geometry_msgs::PoseStamped::ConstPtr& msg)
 {
+	// save the relevant data from the subscribed topic
     est_position_x = msg->pose.position.x;
     est_position_y = msg->pose.position.y;
 
-    //ROS_INFO("est_position_x: [%f]", est_position_x);
-            //Kurve links oben
+	// for Debugging
+    // ROS_INFO("est_position_x: [%f]", est_position_x);
+	
+            // curve on the left upper side
             if(9.5 < est_position_x && est_position_x < 14 && -1.5 < est_position_y && 1.5 < est_position_y)
-            {
-
-                {  //ROS_INFO("Kurve links oben");
-                   //ROS_INFO("est_position_x: [%f]", est_position_x);
-                   //ROS_INFO("est_position_y: [%f]", est_position_y);
-
-                   Kurve = 1;
-                }
+            { 
+				// ROS_INFO for debugging
+				// ROS_INFO("curve on the left upper side");
+				// ROS_INFO("est_position_x: [%f]", est_position_x);
+				// ROS_INFO("est_position_y: [%f]", est_position_y);
+				Kurve = 1;
             }
 
-            //Kurve rechts oben
+            // curve on the right upper side
             else if(10.5 < est_position_x && est_position_x < 14 && -14 < est_position_y && est_position_y< -11)
             {
-                //ROS_INFO("Kurve rechts oben");
-                //ROS_INFO("est_position_x: [%f]", est_position_x);
-                //ROS_INFO("est_position_y: [%f]", est_position_y);
+                // ROS_INFO for debugging
+                // ROS_INFO("curve on the right upper side");
+                // ROS_INFO("est_position_x: [%f]", est_position_x);
+                // ROS_INFO("est_position_y: [%f]", est_position_y);
                 Kurve = 1;
             }
 
-            //Kurve rechts unten
+            // curve on the right lower side
             else if(-2 < est_position_x && est_position_x< 1.5 && -14 < est_position_y && est_position_y < -10.5)
             {
-                //ROS_INFO("Kurve rechts unten");
-                //ROS_INFO("est_position_x: [%f]", est_position_x);
-                //ROS_INFO("est_position_y: [%f]", est_position_y);
+                // ROS_INFO for debugging
+                // ROS_INFO("curve on the right lower side");
+                // ROS_INFO("est_position_x: [%f]", est_position_x);
+                // ROS_INFO("est_position_y: [%f]", est_position_y);
                 Kurve = 1;
             }
-/*
-            //Kurve links unten
+
+            // curve on the left upper side
             else if((6 < est_position_x < 10) && (4.5 < est_position_y < 8.5))
             {
+                //ROS_INFO for debugging
+				//ROS_INFO("curve on the left upper side");
+				//ROS_INFO("est_position_x: [%f]", est_position_x);
+				//ROS_INFO("est_position_y: [%f]", est_position_y);
                 Kurve = 1;
             }
-*/
-            //Gerade
+
+            // straight
             else
             {
-                 //ROS_INFO("est_position_x_Gerade: [%f]");
-                 //ROS_INFO("est_position_x: [%f]", est_position_x);
-                 //ROS_INFO("est_position_y: [%f]", est_position_y);
-                 Kurve = 0;
+				// ROS_INFO for debugging
+                // ROS_INFO("est_position_x_Gerade: [%f]");
+                // ROS_INFO("est_position_x: [%f]", est_position_x);
+                // ROS_INFO("est_position_y: [%f]", est_position_y);
+                Kurve = 0;
             }
-
-/*
-            ofstream datei1 ("papa.dat");
-
-            if (!datei1)
-            {
-                cerr << "Dateien werden nicht geoeffnet.";
-
-            }
-
-            datei1 << '\n' << est_position_x << '\t' << est_position_y;
-*/
-
-
-
-
 }
 
 void control::odomCallback(const geometry_msgs::Twist::ConstPtr& msg)

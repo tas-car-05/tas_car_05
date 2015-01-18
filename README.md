@@ -10,7 +10,7 @@ Marcin Kasperek		marcin.kasperek@tum.de
 Christopher Weber	chritopher.weber@tum.de
 ```
 
-during the laboratory acording to the lecture "Technik autonomer Systeme" at Technische Universität München. 
+during the laboratory according to the lecture "Technik autonomer Systeme" at Technische Universität München. 
 
 
 Package: tas_autonomous_control
@@ -26,10 +26,12 @@ If the car is located on the straight track, the velocity is higher than in a cu
 For curve detection the algorithm subscribes to the topic slam_out_pose, which contains the robots pose without covariance.
 The acceleration is limited to provide a soft start.
 
-Package: simple_navigation goals
+Package: simple_navigation_goals
 -------------------------------------------------------------------------------------------------------------------------------
 The simple_navigation_package sends fixed goals, which are stored in a queue.
 The goals were recorded for the first and second task.
+
+The "start_task.sh" file in the root directory is a shell script which starts the simple_navigation_goals_node.
 
 Package: ira_laser_tools (developed at Universita di Milano)
 -------------------------------------------------------------------------------------------------------------------------------	
@@ -79,6 +81,8 @@ run_rviz_task_2.launch:	for launching task 2 - slalom
 - launching move_base_task_2 instead of move_base
 
 IMPORTANT: In the main.cpp (in /simple_navigation_goals/src) you have to commend the waypoint-setting of the other task out!
+
+
 
 
 
