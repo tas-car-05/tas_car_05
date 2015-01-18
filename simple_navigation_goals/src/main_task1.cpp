@@ -1,5 +1,5 @@
  /**
- * This node sends fixed goals to move base via ROS Action API and receives feedback via callback functions.
+ * This node sends fixed goals to move base via ROS Action API and receives feedback via callback functions
  */
 
 #include <iostream>
