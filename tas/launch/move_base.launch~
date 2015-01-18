@@ -16,8 +16,8 @@
 	  <param name="global_frame_id" value="map"/>
 
 	  <!-- Parameters for initial pose-->
-	  <param name="initial_pose_x" value="11.85"/>
-	  <param name="initial_pose_y" value="18.95"/>
+	  <param name="initial_pose_x" value="11.6"/>
+	  <param name="initial_pose_y" value="18.7"/>
 	  <param name="initial_pose_a" value="0.0"/>
 	  <param name="initial_cov_xx" value="10"/>
 	  <param name="initial_cov_yy" value="10"/>
