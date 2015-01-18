@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-
-<launch>
-  <master auto="start"/>
-<node name="simple_navigation_goals" pkg="rosserial_python" type="serial_node.py" args="/dev/arduino"/>
-
-
-</launch>
